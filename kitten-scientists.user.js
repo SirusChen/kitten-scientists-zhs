@@ -13,7 +13,7 @@
 // Begin Kitten Scientist's Automation Engine
 // ==========================================
 
-var version = 'Kitten Scientists version 1.3.2';
+var version = '小猫科学家 版本 1.3.2';
 var address = '1AQ1AC9W5CEAPgG5739XGXC5vXqyafhoLp';
 // Game will be referenced in loadTest function
 var game = null;
@@ -347,14 +347,14 @@ var run = function() {
             if (this.loop) return;
 
             this.loop = setInterval(this.iterate.bind(this), options.interval);
-            message('Enabling the kitten scientists!');
+            message('启用猫咪科学家!');
         },
         stop: function () {
             if (!this.loop) return;
 
             clearInterval(this.loop);
             this.loop = undefined;
-            message('Disabling the kitten scientists!');
+            message('禁用猫咪科学家!');
         },
         iterate: function () {
             this.observeStars();
@@ -390,8 +390,8 @@ var run = function() {
             var faith = craftManager.getResource('faith');
 
             if (options.auto.faith.trigger <= faith.value / faith.maxValue) {
-                storeForSummary('faith', faith.value * (1 + game.religion.getFaithBonus()));
-                activity('Praised the sun!', 'ks-praise');
+                storeForSummary('faith', faith.value);
+                activity('赞美太阳!', 'ks-praise');
                 game.religion.praise();
             }
         },
@@ -474,14 +474,14 @@ var run = function() {
                 game.villageTab.festivalBtn.onClick();
                 if (game.calendar.festivalDays !== 0) {
                     storeForSummary('festival');
-                    activity('Kittens begin holding a festival', 'ks-festival');
+                    activity('小猫开始举办节日', 'ks-festival');
                 }
             }
         },
         observeStars: function () {
             if (game.calendar.observeBtn != null){
                 game.calendar.observeHandler();
-                activity('Kitten Scientists have observed a star', 'ks-star');
+                activity('小猫科学家观察到一颗星星', 'ks-star');
                 storeForSummary('stars', 1);
             }
         },
@@ -492,7 +492,7 @@ var run = function() {
                 // No way to send only some hunters. Thus, we hunt with everything
                 var hunters = game.village.getJob('hunter').value;
                 storeForSummary('hunt', hunters);
-                activity('Sent ' + game.getDisplayValueExt(hunters) + ' kitten' + (hunters == 1 ? '' : 's') + ' on the hunt', 'ks-hunt');
+                activity('派出 ' + game.getDisplayValueExt(hunters) + ' 波小猫' + (hunters == 1 ? '' : '') + ' 去打猎', 'ks-hunt');
                 game.village.huntAll();
             }
         },
@@ -563,7 +563,7 @@ var run = function() {
                 }
             }
 
-            this.tab ? this.render() : warning('unable to find tab ' + name);
+            this.tab ? this.render() : warning('无法找到标签' + name);
         }
     };
 
@@ -588,7 +588,7 @@ var run = function() {
             button.domNode.click(build);
             storeForSummary(name, 1, 'faith');
 
-            activity('Kittens have discovered ' + build.label, 'ks-faith');
+            activity('小猫已经发现了' + build.label, 'ks-faith');
         },
         getBuild: function (name) {
             return game.religion.getRU(name);
@@ -628,7 +628,7 @@ var run = function() {
             storeForSummary(name, 1, 'build');
 
             var label = build.meta.label ? build.meta.label : build.meta.stages[0].label;
-            activity('Kittens have built a new ' + label, 'ks-build');
+            activity('小猫已经建成了一个新的 ' + label, 'ks-build');
         },
         getBuild: function (name) {
             return game.bld.getBuildingExt(name);
@@ -669,7 +669,7 @@ var run = function() {
             storeForSummary(name, 1, 'build');
 
             var label = build.label;
-            activity('Kittens have built a new ' + label, 'ks-build');
+            activity('小猫建造了一个 ' + label, 'ks-build');
         },
         getBuild: function (name) {
             return game.space.getProgram(name);
@@ -706,7 +706,7 @@ var run = function() {
             amount = (amount * (game.getEffect(ratio) + 1)).toFixed(2);
 
             storeForSummary(name, amount, 'craft');
-            activity('Kittens have crafted ' + game.getDisplayValueExt(amount) + ' ' + ucfirst(name), 'ks-craft');
+            activity('小猫制作了 ' + game.getDisplayValueExt(amount) + ' ' + ucfirst(name), 'ks-craft');
         },
         canCraft: function (name, amount) {
             var craft = this.getCraft(name);
@@ -785,7 +785,7 @@ var run = function() {
                 var res = game.resPool.resources[i];
                 if (res.name === this.getName(name)) return res;
             }
-            warning('unable to find resource ' + name);
+            warning('无法找到资源 ' + name);
             return null;
         },
         getValue: function (name) {
@@ -852,7 +852,7 @@ var run = function() {
 
             game.diplomacy.tradeMultiple(race, amount);
             storeForSummary(name, amount, 'trade');
-            activity('Kittens have traded ' + amount + 'x with ' + ucfirst(name), 'ks-trade');
+            activity('小猫交易了 ' + amount + '次和' + ucfirst(name), 'ks-trade');
         },
         getLowestTradeAmount: function (name) {
             var amount = undefined;
@@ -940,7 +940,7 @@ var run = function() {
                 if (panel.name.indexOf(race) > -1) return panel.tradeBtn;
             }
 
-            warning('unable to find trade button for ' + name);
+            warning('无法找到交易按钮 ' + name);
         }
     };
 
@@ -1155,26 +1155,26 @@ var run = function() {
         var n = Number(value);
 
         if (isNaN(n) || n < 0) {
-            warning('ignoring non-numeric or invalid stock value ' + value);
+            warning('忽略非数值或无效的库存价值' + value);
             return;
         }
 
         if (!options.auto.resources[name]) options.auto.resources[name] = {};
         options.auto.resources[name].stock = n;
-        $('#stock-value-' + name).text('Stock: ' + game.getDisplayValueExt(n));
+        $('#stock-value-' + name).text('库存: ' + game.getDisplayValueExt(n));
     };
 
     var setConsumeRate = function (name, value) {
         var n = parseFloat(value);
 
         if (isNaN(n) || n < 0.0 || n > 1.0) {
-            warning('ignoring non-numeric or invalid consume rate ' + value);
+            warning('忽略非数字或无效消耗率' + value);
             return;
         }
 
         if (!options.auto.resources[name]) options.auto.resources[name] = {};
         options.auto.resources[name].consume = n;
-        $('#consume-rate-' + name).text('Consume: ' + n.toFixed(2));
+        $('#consume-rate-' + name).text('消耗: ' + n.toFixed(2));
     };
 
     var removeResourceControl = function (name) {
@@ -1199,19 +1199,19 @@ var run = function() {
 
         var stock = $('<div/>', {
             id: 'stock-value-' + name,
-            text: 'Stock: ' + game.getDisplayValueExt(stock),
+            text: '库存: ' + game.getDisplayValueExt(stock),
             css: {cursor: 'pointer', display: 'inline-block', width: '80px'},
         });
 
         var consume = $('<div/>', {
             id: 'consume-rate-' + name,
-            text: 'Consume: ' + consume.toFixed(2),
+            text: '消耗: ' + consume.toFixed(2),
             css: {cursor: 'pointer', display: 'inline-block'},
         });
 
         var del = $('<div/>', {
             id: 'resource-delete-' + name,
-            text: 'del',
+            text: '删除',
             css: {cursor: 'pointer',
                 display: 'inline-block',
                 float: 'right',
@@ -1222,7 +1222,7 @@ var run = function() {
         container.append(label, stock, consume, del);
 
         stock.on('click', function () {
-            var value = window.prompt('Stock for ' + ucfirst(title ? title : name));
+            var value = window.prompt('库存 ' + ucfirst(title ? title : name));
             if (value !== null) {
                 setStockValue(name, value);
                 saveToKittenStorage();
@@ -1230,7 +1230,7 @@ var run = function() {
         });
 
         consume.on('click', function () {
-            var value = window.prompt('Consume rate for ' + ucfirst(title ? title : name));
+            var value = window.prompt('消耗率 ' + ucfirst(title ? title : name));
             if (value !== null) {
                 setConsumeRate(name, value);
                 saveToKittenStorage();
@@ -1238,7 +1238,7 @@ var run = function() {
         });
 
         del.on('click', function () {
-            if (window.confirm('Delete resource controls for ' + ucfirst(title ? title : name) + '?')) {
+            if (window.confirm('取消自动转换' + ucfirst(title ? title : name) + '?')) {
                 container.remove();
                 removeResourceControl(name);
                 saveToKittenStorage();
@@ -1290,7 +1290,7 @@ var run = function() {
 
         var add = $('<div/>', {
             id: 'resources-add',
-            text: 'add resources',
+            text: '添加资源',
             css: {cursor: 'pointer',
                 display: 'inline-block',
                 textShadow: '3px 3px 4px gray',
@@ -1299,7 +1299,7 @@ var run = function() {
 
         var clearunused = $('<div/>', {
             id: 'resources-clear-unused',
-            text: 'clear unused',
+            text: '清除未使用',
             css: {cursor: 'pointer',
                 display: 'inline-block',
                 float: 'right',
@@ -1363,10 +1363,10 @@ var run = function() {
             input.on('change', function () {
                 if (input.is(':checked') && auto.enabled == false) {
                     auto.enabled = true;
-                    message('Enabled Auto ' + ucfirst(text));
+                    message('启用自动化 ' + ucfirst(text));
                 } else if (input.not(':checked') && auto.enabled == true) {
                     auto.enabled = false;
-                    message('Disabled Auto ' + ucfirst(text));
+                    message('禁用自动化 ' + ucfirst(text));
                 }
             });
         }
@@ -1383,7 +1383,7 @@ var run = function() {
 
             var button = $('<div/>', {
                 id: 'toggle-items-' + toggleName,
-                text: 'items',
+                text: '项目',
                 css: {cursor: 'pointer',
                     display: 'inline-block',
                     paddingRight: '5px',
@@ -1399,7 +1399,7 @@ var run = function() {
 
             var disableall = $('<div/>', {
                 id: 'toggle-all-items-' + toggleName,
-                text: 'disable all',
+                text: '禁用所有',
                 css: {cursor: 'pointer',
                     display: 'inline-block',
                     textShadow: '3px 3px 4px gray',
@@ -1418,7 +1418,7 @@ var run = function() {
 
             var enableall = $('<div/>', {
                 id: 'toggle-all-items-' + toggleName,
-                text: 'enable all',
+                text: '启用所有',
                 css: {cursor: 'pointer',
                     display: 'inline-block',
                     textShadow: '3px 3px 4px gray'}
@@ -1454,7 +1454,7 @@ var run = function() {
             if (toggleName === 'craft') {
                 var resources = $('<div/>', {
                     id: 'toggle-resource-controls',
-                    text: 'resources',
+                    text: '资源',
                     css: {cursor: 'pointer',
                         display: 'inline-block',
                         paddingRight: '5px',
@@ -1483,7 +1483,7 @@ var run = function() {
         if (auto.trigger) {
             var triggerButton = $('<div/>', {
                 id: 'trigger-' + toggleName,
-                text: 'trigger',
+                text: '触发条件',
                 title: auto.trigger,
                 css: {cursor: 'pointer',
                     display: 'inline-block',
@@ -1493,7 +1493,7 @@ var run = function() {
             });
 
             triggerButton.on('click', function () {
-                var value = window.prompt('Enter a new trigger value for ' + text + '. Should be in the range of 0 to 1.', auto.trigger);
+                var value = window.prompt('输入新的触发值，取值范围：0到1之间' + text + '。', auto.trigger);
                 if (value !== null) {
                     auto.trigger = parseFloat(value);
                     saveToKittenStorage();
@@ -1513,7 +1513,7 @@ var run = function() {
 
         var button = $('<div/>', {
             id: 'toggle-seasons-' + name,
-            text: 'seasons',
+            text: '季节',
             css: {cursor: 'pointer',
                 display: 'inline-block',
                 float: 'right',
@@ -1561,10 +1561,10 @@ var run = function() {
         input.on('change', function () {
             if (input.is(':checked') && option[season] == false) {
                 option[season] = true;
-                message('Enabled trading with ' + ucfirst(name) + ' in the ' + ucfirst(season));
+                message('进行交易 ' + ucfirst(name) + ' 在 ' + ucfirst(season));
             } else if (input.not(':checked') && option[season] == true) {
                 option[season] = false;
-                message('Disabled trading ' + ucfirst(name) + ' in the ' + ucfirst(season));
+                message('停止交易 ' + ucfirst(name) + ' 在 ' + ucfirst(season));
             }
             kittenStorage.items[input.attr('id')] = option[season];
             saveToKittenStorage();
@@ -1597,10 +1597,10 @@ var run = function() {
         input.on('change', function () {
             if (input.is(':checked') && option.enabled == false) {
                 option.enabled = true;
-                message('Enabled Auto ' + elementLabel);
+                message('启用自动化 ' + elementLabel);
             } else if (input.not(':checked') && option.enabled == true) {
                 option.enabled = false;
-                message('Disabled Auto ' + elementLabel);
+                message('禁用自动化' + elementLabel);
             }
             kittenStorage.items[input.attr('id')] = option.enabled;
             saveToKittenStorage();
@@ -1616,7 +1616,7 @@ var run = function() {
 
         var label = $('<label/>', {
             'for': 'toggle-limited-' + name,
-            text: 'Limited'
+            text: '限制'
         });
 
         var input = $('<input/>', {
@@ -1631,10 +1631,10 @@ var run = function() {
         input.on('change', function () {
             if (input.is(':checked') && option.limited == false) {
                 option.limited = true;
-                message('Crafting ' + ucfirst(name) + ': limited once per season');
+                message('工艺 ' + ucfirst(name) + ': 每个季节限量一次');
             } else if (input.not(':checked') && option.limited == true) {
                 option.limited = false;
-                message('Crafting ' + ucfirst(name) + ': unlimited');
+                message('工艺 ' + ucfirst(name) + ': 不限制');
             }
             kittenStorage.items[input.attr('id')] = option.limited;
             saveToKittenStorage();
@@ -1688,14 +1688,14 @@ var run = function() {
 
     optionsElement.append(optionsTitleElement);
 
-    optionsListElement.append(getToggle('engine',   'Enable Scientists'));
-    optionsListElement.append(getToggle('build',    'Building'));
-    optionsListElement.append(getToggle('space',    'Space'));
-    optionsListElement.append(getToggle('craft',    'Crafting'));
-    optionsListElement.append(getToggle('trade',    'Trading'));
-    optionsListElement.append(getToggle('hunt',     'Hunting'));
-    optionsListElement.append(getToggle('faith',    'Religion'));
-    optionsListElement.append(getToggle('festival', 'Festival'));
+    optionsListElement.append(getToggle('engine',   '启用科学家'));
+    optionsListElement.append(getToggle('build',    '建造'));
+    optionsListElement.append(getToggle('space',    '空间'));
+    optionsListElement.append(getToggle('craft',    '工艺'));
+    optionsListElement.append(getToggle('trade',    '贸易'));
+    optionsListElement.append(getToggle('hunt',     '狩猎'));
+    optionsListElement.append(getToggle('faith',    '宗教'));
+    optionsListElement.append(getToggle('festival', '节日'));
 
     // add activity button
     // ===================
@@ -1739,27 +1739,27 @@ var run = function() {
 
         // Praise the Sun
         if (activitySummary.other.faith) {
-            summary('Accumulated ' + game.getDisplayValueExt(activitySummary.other.faith) + ' by praising the sun');
+            summary('累计 ' + game.getDisplayValueExt(activitySummary.other.faith) + ' 通过赞美太阳');
         }
 
         // Hunters
         if (activitySummary.other.hunt) {
-            summary('Sent ' + game.getDisplayValueExt(activitySummary.other.hunt) + ' adorable kitten hunter' + (activitySummary.other.hunt == 1 ? '' : 's'));
+            summary('派出 ' + game.getDisplayValueExt(activitySummary.other.hunt) + ' 批可爱的小猫猎人' + (activitySummary.other.hunt == 1 ? '' : 's'));
         }
 
         // Buildings
         for (var name in activitySummary.build) {
-            summary('Built: +' + game.getDisplayValueExt(activitySummary.build[name]) + ' ' + ucfirst(name));
+            summary('建成: +' + game.getDisplayValueExt(activitySummary.build[name]) + ' ' + ucfirst(name));
         }
 
         // Crafts
         for (var name in activitySummary.craft) {
-            summary('Crafted: +' + game.getDisplayValueExt(activitySummary.craft[name]) + ' ' + ucfirst(name));
+            summary('制作了: +' + game.getDisplayValueExt(activitySummary.craft[name]) + ' ' + ucfirst(name));
         }
 
         // Trading
         for (var name in activitySummary.trade) {
-            summary('Traded: ' + game.getDisplayValueExt(activitySummary.trade[name]) + 'x ' + ucfirst(name));
+            summary('贸易: ' + game.getDisplayValueExt(activitySummary.trade[name]) + 'x ' + ucfirst(name));
         }
 
         // Show time since last run. Assumes that the day and year are always higher.
@@ -1781,10 +1781,10 @@ var run = function() {
             if (days >= 0) {
                 if (years > 0) duration += ' and ';
                 duration += roundToTwo(days) + ' ';
-                duration += (days == 1) ? 'day' : 'days';
+                duration += (days == 1) ? '天' : '天';
             }
 
-            summary('Summary of the last ' + duration);
+            summary('最后的总结 ' + duration);
         }
 
         // Clear out the old activity
@@ -1804,7 +1804,7 @@ var run = function() {
 
     var showActivity = $('<a/>', {
         id: 'showActivityHref',
-        text: 'Show activity',
+        text: '显示活动项',
         href: '#',
         css: {
             verticalAlign: 'top'
@@ -1848,6 +1848,7 @@ var run = function() {
     var donate = $('<li/>').append($('<a/>', {
         href: 'bitcoin:' + address + '?amount=0.005&label=Kittens Donation',
         target: '_blank',
+        tiltle:'这是猫咪科学家插件作者的比特币捐赠地址',
         text: address
     })).prepend($('<img/>', {
         css: {
