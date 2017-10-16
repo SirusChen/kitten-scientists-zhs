@@ -2,9 +2,10 @@
 
 <p align="center"><img src="https://i.imgur.com/AWHGIGH.jpg" /></p>
 
-Kitten Scientists (KS) is a simple automation script for the complex [Kittens Game](http://bloodrizer.ru/games/kittens/).
 
-## 基本用法
+小猫科学家（KS）是一个自动化脚本，针对复杂的[猫国建设者](https://zhaolinxu.github.io/cat-zh/)。
+
+### 安装方法一
 
 双击鼠标下面的JavaScript代码，复制，然后在浏览器上创建一个新书签，并将代码粘贴在地址栏里面：
 
@@ -20,51 +21,57 @@ Kitten Scientists (KS) is a simple automation script for the complex [Kittens Ga
 
 ![书签截图](help.png "书签截图")
 
-### Alternative Installation
+### 安装方法二
 
-You can also permanently install Kitten Scientists with a userscript manager.
+如图：
 
-- On **Firefox**, you'd want to use [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
-- On **Chrome** and **Opera**, you'd want to use [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo).
+![F12大法截图](help2.jpg "F12大法截图")
 
-Now simply [open the script](https://raw.githubusercontent.com/cameroncondry/cbc-kitten-scientists/master/kitten-scientists.user.js) and you should be prompted to install it. 
+### 安装方法三
 
-## Functionality
+您还可以用户名管理员的身份，永久安装小猫科学家。
+
+- 在 **Firefox**浏览器, 你可以安装插件 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
+- 在 **Chrome** 和 **Opera**浏览器, 你可以安装插件[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo).
+
+然后，你可以 [点击打开脚本](https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js) ，然后你应该可以看到安装提示。 
+
+## 功能
 
 - Several UI adjustments (depending on selected theme).
 - Automates:
-    - Building
-    - Crafting
-    - Hunting
-    - Praising
-    - Holding festivals
+    - 建筑
+    - 工艺
+    - 狩猎
+    - 赞美太阳
+    - 举办节日
 
-### Building
+### 建筑
 
 By default, buildings are built if their required resources are at 75% of their storage capacity. For space structures,
 the default threshold is 95%.
 
-### Crafting
+### 工艺
 
 Craftable resources are crafted when the resources required for the craft are at 95% of their storage capacity.
  
 Additionally, you can set a *consumption rate* (60% by default). This defines how much of the available resources can be
 used for crafting.
 
-### Trading
+### 贸易
 
 Trades happen when the traded resource is at 95% of the storage capacity. The trades are optimized to only happen during
 seasons when the trade is most effective.
 
-### Hunting
+### 狩猎
 
 Hunts when catpower is at 95% capacity and builds luxury items before the hunt is sent.
 
-### Praising
+### 赞美太阳
 
 Praises when faith is at 99% capacity.
 
-### Game Log
+### 游戏日志
 
 Automatically observes astronomical events.
 
