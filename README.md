@@ -1,12 +1,19 @@
-# Kitten Scientists
+# 小猫科学家
 
 <p align="center"><img src="https://i.imgur.com/AWHGIGH.jpg" /></p>
 
 Kitten Scientists (KS) is a simple automation script for the complex [Kittens Game](http://bloodrizer.ru/games/kittens/).
 
-## Basic Usage
+## 基本用法
 
-Create the following JavaScript bookmarklet (create a new bookmark and past this as the URL):
+复制下面的JavaScript代码，创建一个新书签，并将代码粘贴在地址栏里面，如图：
+![书签截图](help.png"书签截图")
+
+* 中文版：
+
+    javascript:(function(){var d=document,s=d.createElement('script');s.src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';d.body.appendChild(s);})();
+
+* 英文版：
 
     javascript:(function(){var d=document,s=d.createElement('script');s.src='https://rawgit.com/cameroncondry/cbc-kitten-scientists/master/kitten-scientists.user.js';d.body.appendChild(s);})();
 
