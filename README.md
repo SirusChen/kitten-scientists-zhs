@@ -10,11 +10,14 @@ Kitten Scientists (KS) is a simple automation script for the complex [Kittens Ga
 
 ![书签截图](help.png "书签截图")
 
-* 中文版：
-`javascript:(function(){var d=document,s=d.createElement('script');s.src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';d.body.appendChild(s);})();`
+### 中文版：
 
-* 英文版：
-`javascript:(function(){var d=document,s=d.createElement('script');s.src='https://rawgit.com/cameroncondry/cbc-kitten-scientists/master/kitten-scientists.user.js';d.body.appendChild(s);})();`
+    javascript:(function(){var d=document,s=d.createElement('script');s.src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';d.body.appendChild(s);})();
+
+### 英文版：
+
+    javascript:(function(){var d=document,s=d.createElement('script');s.src='https://rawgit.com/cameroncondry/cbc-kitten-scientists/master/kitten-scientists.user.js';d.body.appendChild(s);})();
+
 
 ### Alternative Installation
 
