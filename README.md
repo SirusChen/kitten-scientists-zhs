@@ -19,13 +19,13 @@
 
 如图：
 
-![书签截图](help.png "书签截图")
+<img src="help.png" alt="" />
 
 ### 安装方法二
 
 如图：
 
-![F12大法截图](help2.jpg "F12大法截图")
+<img src="help2.jpg" alt="F12大法截图" />
 
 ### 安装方法三
 
