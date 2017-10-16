@@ -6,9 +6,7 @@ Kitten Scientists (KS) is a simple automation script for the complex [Kittens Ga
 
 ## 基本用法
 
-复制下面的JavaScript代码，创建一个新书签，并将代码粘贴在地址栏里面，如图：
-
-![书签截图](help.png "书签截图")
+双击鼠标下面的JavaScript代码，复制，然后在浏览器上创建一个新书签，并将代码粘贴在地址栏里面：
 
 ### 中文版：
 
@@ -18,6 +16,9 @@ Kitten Scientists (KS) is a simple automation script for the complex [Kittens Ga
 
     javascript:(function(){var d=document,s=d.createElement('script');s.src='https://rawgit.com/cameroncondry/cbc-kitten-scientists/master/kitten-scientists.user.js';d.body.appendChild(s);})();
 
+如图：
+
+![书签截图](help.png "书签截图")
 
 ### Alternative Installation
 
