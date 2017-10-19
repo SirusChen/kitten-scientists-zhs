@@ -23,6 +23,10 @@
 
 ### 安装方法二
 
+代码：
+
+    document.body.appendChild(document.createElement('script')).src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';
+
 如图：
 
 <img src="help2.jpg" alt="F12大法截图" />
