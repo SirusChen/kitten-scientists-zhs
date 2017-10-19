@@ -7,7 +7,7 @@
 
 ### 安装方法一
 
-双击鼠标下面的JavaScript代码，复制，然后在浏览器上创建一个新书签，并将代码粘贴在地址栏里面：
+双击鼠标选中下面的JavaScript代码，复制，然后在浏览器上创建一个新书签，并将代码粘贴在地址栏里面：
 
 ### 中文版：
 
@@ -23,7 +23,7 @@
 
 ### 安装方法二
 
-代码：
+双击选中代码，然后复制：
 
     document.body.appendChild(document.createElement('script')).src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';
 
