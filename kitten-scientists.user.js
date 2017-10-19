@@ -726,7 +726,13 @@ var run = function() {
             		cnname='脚手架';
             }else if(cnname == "Slab"){
             		cnname='石板';
+            }else if(cnname == "Kerosene"){
+            		cnname='煤油';
+            }else if(cnname == "Plate"){
+            		cnname='金属板';
             }
+            
+            
 //       		console.log(cnname);
 //          activity('小猫制作了 ' + game.getDisplayValueExt(amount) + ' ' + ucfirst(name), 'ks-craft');
 			activity('小猫制作了 ' + game.getDisplayValueExt(amount) + ' ' + cnname, 'ks-craft');
