@@ -44,8 +44,8 @@
 
 ## 功能
 
-- Several UI adjustments (depending on selected theme).
-- Automates:
+- 几个UI调整（取决于所选主题）。
+- 自动化：
     - 建筑
     - 工艺
     - 狩猎
@@ -54,41 +54,38 @@
 
 ### 建筑
 
-By default, buildings are built if their required resources are at 75% of their storage capacity. For space structures,
-the default threshold is 95%.
+默认情况下，如果所需的资源占其存储容量的75％，建筑物将被建立。 对于空间结构，默认阈值为95％。
 
 ### 工艺
 
-Craftable resources are crafted when the resources required for the craft are at 95% of their storage capacity.
- 
-Additionally, you can set a *consumption rate* (60% by default). This defines how much of the available resources can be
-used for crafting.
+当工艺所需的资源占其存储容量的95％时，可制作可行的资源。
+ 
+另外，您可以设置*消费率*（默认为60％）。 这定义了可用资源的大小用于制作。
 
 ### 贸易
 
-Trades happen when the traded resource is at 95% of the storage capacity. The trades are optimized to only happen during
-seasons when the trade is most effective.
+当交易资源占存储容量的95％时，交易发生。 这些交易被优化为仅在此期间发生贸易最有效的季节。
 
 ### 狩猎
 
-Hunts when catpower is at 95% capacity and builds luxury items before the hunt is sent.
+狩猎时，猫力达到95％的容量，并建立奢侈品前狩猎发送。
 
 ### 赞美太阳
 
-Praises when faith is at 99% capacity.
+信仰是在99％的容量时，自动赞美太阳。
 
 ### 游戏日志
 
-Automatically observes astronomical events.
+自动观察天文事件。
 
-## Contributors
+## 贡献者
 
-If you would like to contribute to the Kitten Scientists, then you can do so in these ways:
+如果你想为小猫科学家贡献，那么你可以这样做：
 
-- Submit issues or bugs you find, or functionality that would improve the project.
-- Fork the repository, add some functionality, then submit a pull request.
+- 提交您发现的问题或错误，或改进项目的功能。
+- 叉存储库，添加一些功能，然后提交一个请求。
 
-Thanks to these past and present contributors!
+感谢这些过去和现在的贡献者！
 
 - [adituv](https://github.com/adituv)
 - [Azulan](https://www.reddit.com/user/Azulan)
