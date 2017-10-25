@@ -734,6 +734,8 @@ var run = function() {
             		cnname='E合金';
             }else if(cnname == "Concrete"){
             		cnname='混凝土';
+            }else if(cnname == "Alloy"){
+            		cnname='合金';
             }
 //       		console.log(cnname);
 //          activity('小猫制作了 ' + game.getDisplayValueExt(amount) + ' ' + ucfirst(name), 'ks-craft');
