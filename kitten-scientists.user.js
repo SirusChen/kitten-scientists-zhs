@@ -730,6 +730,8 @@ var run = function() {
             		cnname='煤油';
             }else if(cnname == "Plate"){
             		cnname='金属板';
+            }else if(cnname == "Eludium"){
+            		cnname='E合金';
             }
             
             
