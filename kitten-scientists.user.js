@@ -738,7 +738,10 @@ var run = function() {
             		cnname='合金';
             }else if(cnname == "Thorium"){
             		cnname='钍';
+            }else if(cnname == "Ship"){
+            		cnname='船';
             }
+            
 //       		console.log(cnname);
 //          activity('小猫制作了 ' + game.getDisplayValueExt(amount) + ' ' + ucfirst(name), 'ks-craft');
 			activity('小猫制作了 ' + game.getDisplayValueExt(amount) + ' ' + cnname, 'ks-craft');
