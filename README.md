@@ -5,13 +5,32 @@
 
 小猫科学家（KS）是一个自动化脚本，提供给好玩的网页模拟建设游戏[猫国建设者](https://zhaolinxu.github.io/cat-zh/)。
 
+
+《猫国建设者》国内版：https://likexia.gitee.io/cat-zh/
+
+《猫国建设者》GItHub版：https://zhaolinxu.github.io/cat-zh/
+
+
+【2019-06-19】
+
+《小猫科学家》今天更新到了1.3.3，部分玩家反映说无法启用科学家了。
+
+据大佬分析，是因为新版本的科学家要求必须使用新版本的Chrome浏览器（版本号69以上）才能正常使用。
+
+
 ### 安装方法一
 
 双击鼠标选中下面的JavaScript代码，复制，然后在浏览器上创建一个新书签，并将代码粘贴在地址栏里面：
 
 ### 中文版：
 
-    javascript:(function(){var d=document,s=d.createElement('script');s.src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';d.body.appendChild(s);})();
+#### 1.3.2版本
+
+    javascript:(function(){var d=document,s=d.createElement('script');s.src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user-1.3.2.js';d.body.appendChild(s);})();
+
+#### 1.3.3版本
+    
+    javascript:(function(){var d=document,s=d.createElement('script');s.src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user-1.3.3.js';d.body.appendChild(s);})();
 
 ### 英文版：
 
@@ -27,7 +46,13 @@
 
 双击选中代码，然后复制：
 
-    document.body.appendChild(document.createElement('script')).src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user.js';
+#### 1.3.2版本
+
+    document.body.appendChild(document.createElement('script')).src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user-1.3.2.js';
+    
+#### 1.3.3版本
+
+    document.body.appendChild(document.createElement('script')).src='https://zhaolinxu.github.io/kitten-scientists-zhs/kitten-scientists.user-1.3.3.js';
 
 如图：
 
