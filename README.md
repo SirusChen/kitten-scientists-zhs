@@ -1,7 +1,5 @@
 # 小猫科学家
 
-<p align="center"><img src="https://i.imgur.com/AWHGIGH.jpg" /></p>
-
 
 小猫科学家（KS）是一个自动化脚本，提供给好玩的网页模拟建设游戏[猫国建设者](https://zhaolinxu.github.io/cat-zh/)。
 
